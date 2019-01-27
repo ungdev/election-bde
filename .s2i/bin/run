@@ -1,0 +1,4 @@
+#!/bin/bash
+
+php -d memory_limit=-1 artisan migrate --force
+exec /usr/libexec/s2i/run

@@ -90,7 +90,7 @@ class LoginController extends Controller
         $json = json_decode($response->getBody()->getContents(), true)['data'];
 
         // Check if the user is in cotisant list
-        if(!in_array($json['login'], config('election.cotisants.login'))) {
+        if($json['bdeMember'] != true) {
             return redirect()->route('login_cannot');
         }
 

@@ -15,6 +15,12 @@ Projet originel de https://github.com/Alabate/utt-bde-election, mis à jour.
  * Utilisez `http://xxxxxx/login/auth` comme URL de redirection
  * Cochez uniquement 'Données publiques'
 * Réglez chaque parametre du fichier `config/election.php`
-* Si vous êtes sur le même réseau local que le site etu, il se peut que vous ne puissiez pas vous y connecter. Testez en faisant `wget etu.utt.fr`, si la connexion est refusée, alors essayez `http://illidan.sia` (pas de https) comme `baseuri` de `config/election.php`
+** A NOTER ** qu'il est possible de configurer les parametres via les variables d'environnement:
+    - ETU_APP_ID
+    - ETU_APP_SECRET
+    - LOGIN_ADMIN (login des admins séparé par des , )
+    - EMAILS_ADMIN (si plusieurs, séparer par des , )
+    - LOGIN_VIEWER (login des admin en lecture séparé par des , )
+    - VOTE_START `ex: 2017-03-02 21:00:00`
+    - VOTE_END `ex: 2017-03-02 21:00:00`
 * Si votre serveur n'est pas en https, commentez la ligne `URL::forceSchema("https");` du fichier `app/Http/routes.php`
-* Enfin réglez les droits du dossier : `chown -R www-data:www-data /var/www/domain.com/`
