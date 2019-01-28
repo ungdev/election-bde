@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Erreur</div>
                 <div class="panel-body"><p>Vous avez déjà voté et il est impossible de modifier son vote !</p>
-                    <a class="btn btn-primary" style="float:right;margin:5px;" href="{{ url('/logout') }}">Deconnexion</a>
+                    <a class="btn btn-primary" style="float:right;margin:5px;" href="{{ url()->route('logout') }}">Deconnexion</a>
                 </div>
             </div>
         </div>

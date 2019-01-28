@@ -27,7 +27,7 @@
                 	<a data-toggle="collapse" href="#members{{ $list['id'] }}">Afficher/Masquer</a>
                 	<p id="members{{ $list['id'] }}" class="collapse">{!! nl2br(e($list['members'])) !!}</p>
 
-					<a class="btn btn-primary" style="float:right;margin:5px;" href="{{ url('/vote/'.$list['id']) }}">Voter pour la liste <br/><strong>{{ $list['name'] }}</strong></a>
+					<a class="btn btn-primary" style="float:right;margin:5px;" href="{{ url()->route('vote_confirm', ['id' => $list->id]) }}">Voter pour la liste <br/><strong>{{ $list['name'] }}</strong></a>
                 </div>
             </div>
         </div>
@@ -44,7 +44,7 @@
                 	<p>Les votes blanc sont tout de même comptés et permettent de savoir si ce que proposent les listes répond à la demande des étudiants.
                 	Néanmoins ils n'auront pas d'influence sur le résultats.</p>
 
-					<a class="btn btn-primary" style="float:right;margin:5px;" href="{{ url('/vote/0') }}">Voter blanc</a>
+					<a class="btn btn-primary" style="float:right;margin:5px;" href="{{ url()->route('vote_doit', ['id' => 0]) }}">Voter blanc</a>
                 </div>
             </div>
         </div>

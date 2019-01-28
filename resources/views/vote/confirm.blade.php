@@ -10,15 +10,15 @@
                     <div class="panel-heading">Confirmation de vote pour <strong>{{ $list->name }}</strong></div>
                     <div class="panel-body">
                         <p>Tu as choisis de voter pour <strong>{{ $list->name }}</strong>. Tu ne pourras pas modifier ce choix par la suite. Veux-tu vraiment continuer ?</p>
-    					<a class="btn btn-primary" style="float:right;margin:5px;" href="{{ url('/vote/'.$list->id.'/confirmed') }}">Confirmer le vote pour <strong>{{ $list->name }}</strong></a>
-                        <a class="btn btn-danger" style="float:right;margin:5px;" href="{{ url('/vote/') }}">Annuler</a>
+    					<a class="btn btn-primary" style="float:right;margin:5px;" href="{{ url()->route('vote_doit', ['id' => $list->id]) }}">Confirmer le vote pour <strong>{{ $list->name }}</strong></a>
+                        <a class="btn btn-danger" style="float:right;margin:5px;" href="{{ url()->route('vote_index') }}">Annuler</a>
                     </div>
                 @else
                     <div class="panel-heading">Confirmation de vote <strong>blanc</strong></div>
                     <div class="panel-body">
                         <p>Tu as choisis de voter <strong>blanc</strong>. Tu ne pourras pas modifier ce choix par la suite. Veux-tu vraiment continuer ?</p>
-                        <a class="btn btn-primary" style="float:right;margin:5px;" href="{{ url('/vote/0/confirmed') }}">Confirmer le vote <strong>blanc</strong></a>
-                        <a class="btn btn-danger" style="float:right;margin:5px;" href="{{ url('/vote/') }}">Annuler</a>
+                        <a class="btn btn-primary" style="float:right;margin:5px;" href="{{ url()->route('vote_doit', ['id' => 0]) }}">Confirmer le vote <strong>blanc</strong></a>
+                        <a class="btn btn-danger" style="float:right;margin:5px;" href="{{ url()->route('vote_index') }}">Annuler</a>
                     </div>
                 @endif
             </div>

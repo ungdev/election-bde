@@ -65,7 +65,7 @@
         <div class="col-md-8 col-md-offset-2">
             @if ($isReferer)
                 <h2>Modification des listes proposés</h2>
-                <a class="btn btn-success" style="float:right;margin-bottom:10px;" href="{{ url('/admin/new')}}">Créer une nouvelle liste</a>
+                <a class="btn btn-success" style="float:right;margin-bottom:10px;" href="{{ url()->route('admin_new') }}">Créer une nouvelle liste</a>
             @else
                 <h2>Listes proposés</h2>
             @endif
@@ -90,8 +90,8 @@
                     <p id="members{{ $list['id'] }}" class="collapse">{!! nl2br(e($list['members'])) !!}</p>
 
                     @if ($isReferer)
-                    <a class="btn btn-primary" style="float:right;margin:5px;" href="{{ url('/admin/edit/'.$list['id']) }}">Modifier la liste <br/><strong>{{ $list['name'] }}</strong></a>
-                    <a class="btn btn-danger" style="float:right;margin:5px;" href="{{ url('/admin/delete/'.$list['id']) }}">Supprimer liste <br/><strong>{{ $list['name'] }}</strong></a>
+                    <a class="btn btn-primary" style="float:right;margin:5px;" href="{{ url()->route('admin_edit', ['id' => $list['id']]) }}">Modifier la liste <br/><strong>{{ $list['name'] }}</strong></a>
+                    <a class="btn btn-danger" style="float:right;margin:5px;" href="{{ url()->route('admin_delete_confirm', ['id' => $list['id']]) }}">Supprimer liste <br/><strong>{{ $list['name'] }}</strong></a>
                     @endif
                 </div>
             </div>
@@ -112,11 +112,7 @@
                 <div class="panel-heading">Fichier de configuration</div>
                 <div class="panel-body">
                     <ul>
-                        <li>Cotisants : 
-                            <ul>
-                                <li>Enregistrés par Numéro Etu : {{ count(config('election.cotisants.id')) }}</li>
-                                <li>Enregistrés par login Etu : {{ count(config('election.cotisants.login')) }}</li>
-                            </ul>
+                        <li>Cotisants : <i>via ERP et site ETU</i>
                         </li>
                         <li>Dates : 
                             <ul>
@@ -151,7 +147,7 @@
                         </li>
                     </ul>
 
-                    <p>Pour modifier cette configuration, modifiez le fichier <em>config/election.php</em>.</p>
+                    <p>Pour modifier cette configuration, modifiez le fichier <em>config/election.php</em> ou les variables d'environnement.</p>
                </div>
             </div>
         </div>
@@ -165,7 +161,7 @@
                 <div class="panel-heading">Remise à zéro du site</div>
                 <div class="panel-body">
                     <p>Ce formulaire permet d'effacer toutes les listes et tous les votes. Cette action est définitive.</p>
-                    <a href="{{ url('/admin/reset') }}" style="float:right;" class="btn btn-danger">Remettre à zéro tout le site</a>
+                    <a href="{{ url()->route('admin_reset_confirm') }}" style="float:right;" class="btn btn-danger">Remettre à zéro tout le site</a>
                </div>
             </div>
         </div>

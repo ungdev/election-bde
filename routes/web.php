@@ -27,8 +27,8 @@
 $routes = function () {
     Route::get('/', [ 'as' => 'home', 'uses' => 'LoginController@home' ]);
 
-    Route::get('logout', [ 'as' => 'login_redirect', 'uses' => 'LoginController@logout' ]);
-    Route::get('login', [ 'as' => 'login_redirect', 'uses' => 'LoginController@redirect' ]);
+    Route::get('logout', [ 'as' => 'logout', 'uses' => 'LoginController@logout' ]);
+    Route::get('login', [ 'as' => 'login', 'uses' => 'LoginController@redirect' ]);
     Route::get('login/auth', [ 'as' => 'login_auth', 'uses' => 'LoginController@auth' ]);
     Route::get('login/cannot', [ 'as' => 'login_cannot', 'uses' => 'LoginController@cannot' ]);
 

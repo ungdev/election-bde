@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Erreur</div>
                 <div class="panel-body"><p>Vous ne semblez pas être cotisant BDE. Si vous pensez que c'est une erreur, contactez l'arbitre de ces elections : {{ config('election.referer.email') }}</p>
-                     <a class="btn btn-primary" style="float:right;margin:5px;" href="{{ url('/') }}">Voter avec un autre compte</a>
+                     <a class="btn btn-primary" style="float:right;margin:5px;" href="{{ url()->route('home') }}">Voter avec un autre compte</a>
                </div>
             </div>
         </div>

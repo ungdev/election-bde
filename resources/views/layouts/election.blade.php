@@ -39,7 +39,7 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url()->route('home') }}">
                     Élections BDE UTT
                 </a>
             </div>
@@ -48,10 +48,10 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     @if (Session::has('fullname'))
-                    <li><a href="{{ url('/vote') }}">Voter</a></li>
+                    <li><a href="{{ url()->route('vote_index') }}">Voter</a></li>
 
                         @if (in_array(Session::get('login'),config('election.referer.login')) || in_array(Session::get('login'), config('election.viewer')))
-                        <li><a href="{{ url('/admin') }}">Panel admin</a></li>
+                        <li><a href="{{ url()->route('admin_panel') }}">Panel admin</a></li>
                         @endif
                     @endif
                 </ul>
@@ -61,9 +61,9 @@
                     <!-- Authentication Links -->
                     @if (Session::has('fullname'))
                         <li><div class="navbar-username">Connecté en tant que <strong>{{ Session::get('fullname') }}</strong></div></li>
-                        <li><a href="{{ url('/logout') }}">Deconnexion</a></li>
+                        <li><a href="{{ url()->route('logout') }}">Deconnexion</a></li>
                     @else
-                        <li><a href="{{ url('/login') }}">Connexion</a></li>
+                        <li><a href="{{ url()->route('login') }}">Connexion</a></li>
                     @endif
                 </ul>
             </div>

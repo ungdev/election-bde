@@ -22,9 +22,9 @@
 
 
                         @if (Session::has('login'))
-                            <a class="btn btn-primary" style="float:right;margin:5px;" href="{{ url('/vote') }}">Voter</a>
+                            <a class="btn btn-primary" style="float:right;margin:5px;" href="{{ url()->route('vote_index') }}">Voter</a>
                         @else
-                            <a class="btn btn-primary" style="float:right;margin:5px;" href="{{ url('/login') }}">Se connecter</a>
+                            <a class="btn btn-primary" style="float:right;margin:5px;" href="{{ url()->route('login') }}">Se connecter</a>
                         @endif
                     @elseif (isset($startTime))
                         <p><strong>Les élections ouvrent dans {{ $startTime }} !</strong></p>

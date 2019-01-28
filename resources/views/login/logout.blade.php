@@ -8,7 +8,7 @@
                 <div class="panel-heading">Deconnexion</div>
                 <div class="panel-body"><p>Vous êtes bien déconnecté.</p>
 
-                    <a class="btn btn-primary" style="float:right;margin:5px;" href="{{ url('/') }}">Voter avec un autre compte</a>
+                    <a class="btn btn-primary" style="float:right;margin:5px;" href="{{ url()->route('home') }}">Voter avec un autre compte</a>
                 </div>
             </div>
         </div>
