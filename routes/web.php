@@ -24,7 +24,7 @@
 |
 */
 
-Route::group([], function () {
+$routes = function () {
     Route::get('/', [ 'as' => 'home', 'uses' => 'LoginController@home' ]);
 
     Route::get('logout', [ 'as' => 'login_redirect', 'uses' => 'LoginController@logout' ]);
@@ -50,4 +50,12 @@ Route::group([], function () {
         Route::get('admin/reset', [ 'as' => 'admin_reset_confirm', 'uses' => 'AdminController@reset_confirm' ]);
         Route::get('admin/reset/confirmed', [ 'as' => 'admin_reset', 'uses' => 'AdminController@reset' ]);
     });
-});
+};
+
+if(env('APP_SUFFIX')) {
+    Route::prefix(env('APP_SUFFIX'))->group($routes);
+} else {
+    Route::group([], $routes);
+}
+
+
