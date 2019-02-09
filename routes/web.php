@@ -52,6 +52,10 @@ $routes = function () {
     });
 };
 
+if (env('APP_ENV') === 'production') {
+    URL::forceSchema('https');
+}
+
 if(env('APP_SUFFIX')) {
     Route::prefix(env('APP_SUFFIX'))->group($routes);
 } else {
