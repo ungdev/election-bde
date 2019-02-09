@@ -53,7 +53,7 @@ $routes = function () {
 };
 
 if (env('APP_ENV') === 'production') {
-    URL::forceSchema('https');
+    URL::forceScheme('https');
 }
 
 if(env('APP_SUFFIX')) {
