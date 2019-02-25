@@ -27,7 +27,7 @@
                 	<a data-toggle="collapse" href="#members{{ $list['id'] }}">Afficher/Masquer</a>
                 	<p id="members{{ $list['id'] }}" class="collapse">{!! nl2br(e($list['members'])) !!}</p>
 
-					<a class="btn btn-primary" style="float:right;margin:5px;" href="{{ url()->route('vote_confirm', ['id' => $list->id]) }}">Voter pour la liste <br/><strong>{{ $list['name'] }}</strong></a>
+					<a class="btn btn-primary" style="float:right;margin:5px;" href="{{ url()->route('vote_confirm', ['id' => $list['id']]) }}">Voter pour la liste <br/><strong>{{ $list['name'] }}</strong></a>
                 </div>
             </div>
         </div>

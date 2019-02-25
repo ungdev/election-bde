@@ -43,18 +43,18 @@ class VoteController extends Controller
      */
     public function doit($id){
 
-        $user = new User;
-        $user->login = Session::get('login');
-        $user->save();
-
         if($id != 0)
         {
             ListM::find($id)->increment('score');
         }
         else {
-            $list = ListM::firstOrCreate(['name' => '']);
+            $list = ListM::firstOrCreate(['name' => '', 'description' => '', 'promises' => '', 'members' => '']);
             $list->increment('score');
         }
+
+        $user = new User;
+        $user->login = Session::get('login');
+        $user->save();
 
         // deconnexion
         Session::flush();
