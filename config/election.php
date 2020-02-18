@@ -10,7 +10,7 @@ return [
 	],
 
 	// Login des arbitres et email de contact
-	// Les arbitres peuvent administratrer les listes
+	// Les arbitres peuvent administrer les listes
 	'referer' => [
 		'login' => explode(',', env('LOGIN_ADMIN', '')),
         'email' => env('EMAILS_ADMIN', '')
