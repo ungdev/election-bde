@@ -125,7 +125,7 @@
                             <ul>
                                 <li>Identifiant(s) :
                                     @foreach(config('election.referer.login') as $login)
-                                    {{ $login }} (<a target="_blank" href="{{ config('election.etuutt.baseuri') }}/user/{{ $login }} }}">Profil</a>)
+                                    {{ $login }} (<a target="_blank" href="{{ config('election.etuutt.baseuri') }}/user/{{ $login }}">Profil</a>)
                                     @endforeach
                                 </li>
                                 <li>Email(s) : {{ config('election.referer.email') }}</li>
