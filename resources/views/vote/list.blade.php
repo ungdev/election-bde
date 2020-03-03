@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-	        <p>Tu peux maintenant voter pour la liste que tu préfère. <br/><strong>Attention, il ne reste plus que {{ $endTime }} afin la fin des votes !</strong></p>
+	        <p>Tu peux maintenant voter pour la liste que tu préfère. <br/><strong>Attention, il ne reste plus que {{ $endTime }} avant la fin des votes !</strong></p>
 	        <p>Note : Les listes sont affichés dans un ordre aléatoire afin d'éviter une inégalité causé par la flemme d'utiliser la molette ;)</p>
 	        
         </div>
